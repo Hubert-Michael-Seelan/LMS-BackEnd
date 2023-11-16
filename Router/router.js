@@ -7,5 +7,5 @@ router.route('/').get(home);
 router.route('/create').post(createUser);
 router.route('/login').post(login);
 router.route('/forgotpassword').post(forgetpassword);
-router.route('/reseetPassword').post(resetPassword);
+router.route('/resetPassword').post(resetPassword);
 module.exports = router;  
