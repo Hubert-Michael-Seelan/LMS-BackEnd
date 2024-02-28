@@ -8,4 +8,4 @@ router.route('/create').post(createUser);
 router.route('/login').post(login);
 router.route('/forgotpassword').post(forgetpassword);
 router.route('/resetPassword').post(resetPassword);
-module.exports = router;  
+module.exports = router;    

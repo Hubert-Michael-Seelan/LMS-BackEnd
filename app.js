@@ -23,3 +23,6 @@ app.listen(PORT, (err) => {
     console.log(`PORT:${PORT} is Running`);
   }
 });
+app.get("/",(req, res)=>{
+  res.send("Express App is Running")
+})

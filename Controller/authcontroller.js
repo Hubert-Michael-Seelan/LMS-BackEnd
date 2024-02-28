@@ -29,7 +29,6 @@ exports.createUser = async (req, res) => {
     if (!email) {
       return res.json({ message: "Please enter Mail-Id" });
     }
-
     if (!password) {
       return res.json({ message: "Please enter Password" });
     }
@@ -60,7 +59,6 @@ exports.createUser = async (req, res) => {
 exports.login = async (req, res) => {
   const { email, password } = req.body;
   const existingUser = await User.findOne({ email });
-
   try {
     if (existingUser) {
       if (bcrypt.compare(password, existingUser.password)) {
@@ -111,7 +109,6 @@ exports.forgetpassword = async (req, res) => {
               </body>
               </html>`,
       };
-
       const token = jwt.sign(email, JWT_SECRET);
       transporter.sendMail(mailOption, (err) => {
         if (err) {
@@ -147,4 +144,3 @@ exports.resetPassword = async (req, res) => {
     res.status(200).json({ status: false, message: "Something Went wrong" });
   }
 };
-
